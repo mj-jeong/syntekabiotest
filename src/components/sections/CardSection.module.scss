@@ -1,0 +1,181 @@
+.cardSection {
+  background-color: #dfecc6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Desktop
+  padding: 130px 0 130px 0;
+  min-height: 1129px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    padding: 80px 0 80px 16px;
+    min-height: 706px;
+  }
+}
+
+.titleArea {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 80px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+}
+
+.title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  color: #485c11;
+  margin: 0 0 30px 0;
+
+  // Desktop
+  font-size: 48px;
+  line-height: 43.2px;
+  letter-spacing: -1.44px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    font-size: 28px;
+    line-height: 26.6px;
+    letter-spacing: -0.84px;
+    margin: 0 0 24px 0;
+  }
+}
+
+.subtitle {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 400;
+  color: #485c11;
+  margin: 0;
+
+  // Desktop
+  font-size: 18px;
+  line-height: 25.2px;
+  letter-spacing: -0.09px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    font-size: 14px;
+    line-height: 19.6px;
+    letter-spacing: -0.07px;
+  }
+}
+
+.carouselArea {
+  width: 100%;
+  margin-bottom: 40px;
+
+  // Desktop
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  // 스크롤바 숨기기
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE and Edge
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Opera
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 30px;
+    overflow: auto;
+    cursor: default;
+  }
+}
+
+.cardsTrack {
+  display: inline-flex;
+  min-width: 100%;
+  gap: 16px;
+  align-items: flex-start;
+
+  // Desktop
+  padding-left: 240px;
+  padding-right: 50px;
+
+  // 터치 스크롤 지원
+  touch-action: pan-x;
+  -webkit-user-select: none;
+  user-select: none;
+
+  @media (max-width: 767px) {
+    // Mobile
+    gap: 12px;
+    padding: 0 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    // 스크롤바 숨기기
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & > * {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dotInner {
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 50%;
+  border: 1px solid #485c11;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active .dotInner {
+  background-color: #485c11;
+}
+
+.dot:hover .dotInner {
+  background-color: rgba(72, 92, 17, 0.3);
+}
+
+.dot.active:hover .dotInner {
+  background-color: #485c11;
+}

@@ -1,0 +1,93 @@
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  // Desktop
+  border-radius: 30px;
+  width: 460px;
+  height: 612px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    border-radius: 20px;
+    width: 230px;
+    height: 355px;
+  }
+
+  .img {
+    flex-shrink: 0;
+
+    // Desktop
+    height: 436px;
+
+    @media (max-width: 767px) {
+      // Mobile
+      height: 218px;
+    }
+  }
+
+  .txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    padding: 30px;
+
+    @media (max-width: 767px) {
+      padding: 18px 18px;
+    }
+  }
+
+  .title {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 700;
+    color: #485c11;
+    margin: 0 0 8px 0;
+
+    // Desktop
+    font-size: 22px;
+    line-height: 23.1px;
+    letter-spacing: -0.88px;
+
+    @media (max-width: 767px) {
+      // Mobile
+      font-size: 15px;
+      line-height: 16.5px;
+      letter-spacing: -0.6px;
+    }
+  }
+
+  .description {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 400;
+    color: #6f6f6f;
+    margin: 0;
+
+    // 3줄 말줄임 처리
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    // Desktop
+    font-size: 18px;
+    line-height: 25.2px;
+    letter-spacing: -0.09px;
+    max-height: 76px; // line-height * 3 = 25.2px * 3 ≈ 76px
+
+    @media (max-width: 767px) {
+      // Mobile
+      font-size: 14px;
+      line-height: 19.6px;
+      letter-spacing: -0.07px;
+      max-height: 59px; // line-height * 3 = 19.6px * 3 ≈ 59px
+    }
+  }
+}

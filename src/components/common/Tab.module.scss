@@ -1,0 +1,88 @@
+.tabContainer {
+  position: relative;
+  width: 100%;
+}
+
+.tabList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+
+  // Desktop
+  height: 69px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    height: 46px;
+  }
+}
+
+.tab {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  color: #929292;
+  transition: color 0.3s ease;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Desktop
+  font-size: 22px;
+  line-height: 23.1px;
+  letter-spacing: -0.88px;
+  max-width: 234px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    font-size: 15px;
+    line-height: 16.5px;
+    letter-spacing: -0.6px;
+    max-width: 131px;
+  }
+
+  &.active {
+    color: #485c11;
+  }
+
+  &:hover:not(.active) {
+    color: #6f6f6f;
+  }
+}
+
+.selectedBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #485c11;
+
+  // Desktop
+  height: 4.5px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    height: 3px;
+    border-radius: 100px;
+  }
+}
+
+.divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #929292;
+  height: 2px;
+
+  @media (max-width: 767px) {
+    height: 1px;
+  }
+}
+

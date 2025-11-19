@@ -1,0 +1,29 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dfecc6;
+  border-radius: 1000px;
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 700;
+  color: #000000;
+
+  // Desktop
+  padding: 14px 22px;
+  font-size: 14px;
+  line-height: 19.6px;
+  letter-spacing: -0.35px;
+  min-width: 116px;
+  height: 48px;
+
+  @media (max-width: 767px) {
+    // Mobile
+    padding: 14px 20px;
+    font-size: 12px;
+    line-height: 16.8px;
+    letter-spacing: -0.3px;
+    min-width: 105px;
+    height: 45px;
+  }
+}
+

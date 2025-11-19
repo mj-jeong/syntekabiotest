@@ -1,0 +1,353 @@
+/* ##############################
+	# reset
+################################*/
+*,
+*::before,
+*::after {
+  line-height: 1.2;
+  box-sizing: border-box;
+  // word-break: break-all;
+  word-break: break-word;
+  /* 단어 단위로 줄바꿈을 원할 경우 keep-all로 변경 */
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+bdo,
+a,
+abbr,
+acronym,
+address,
+area,
+big,
+bdi,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+input,
+textarea,
+select,
+button,
+keygen,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+datalist,
+dialog,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+map,
+menuitem,
+meter,
+nav,
+output,
+ruby,
+section,
+summary,
+progress,
+time,
+mark,
+audio,
+embed,
+video,
+rp,
+rt,
+wbr,
+hr {
+  margin: 0;
+  padding: 0;
+  //border: 0; 테마 스타일이 보이지 않아서 주석 처리
+  font-weight: 400;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+pre,
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-weight: normal;
+  font-size: 0.625rem;
+  line-height: 1.2;
+  overflow-y: hidden; // 저작도구 특수
+}
+
+body {
+  font-size: 1rem;
+  font-family:
+    'Pretendard Variable',
+    Pretendard,
+    'Noto Sans CJK',
+    'Noto Sans Vietnamese',
+    -apple-system,
+    'San Francisco',
+    'Helvetica Neue',
+    'Lucida Grande',
+    'Segoe UI',
+    'Tahoma',
+    'Roboto',
+    sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+//다국어 관련
+body {
+  top: 0 !important;
+  > .skiptranslate {
+    display: none !important;
+  }
+}
+// 번역 툴바 숨기기
+.skiptranslate,
+#goog-gt-tt,
+#translate_element {
+  display: none !important;
+}
+input,
+button,
+select,
+textarea {
+  border-radius: 0;
+  color: inherit;
+  vertical-align: middle;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus,
+button:focus,
+input:active:not([type='file']),
+input:focus:not([type='file']),
+textarea:active,
+textarea:focus,
+select:active,
+select:focus,
+button:active,
+button:focus,
+div[role='button']:focus-visible,
+[role='combobox']:focus-visible,
+[role='listbox']:focus-visible,
+div[tabindex='0']:focus-visible,
+input[type='file']:focus + .btn-file,
+input[type='file']:active + .btn-file,
+html[data-skin='skin-light'] .textarea-wrap.focused,
+li[tabindex='0']:focus-visible {
+  /* outline: 0 사용여부는 추후에.. */
+  outline: 3px dashed #000;
+
+  @at-root .header & {
+    outline: 3px dashed #fff;
+  }
+  @at-root html:not([data-skin='skin-light']) .pageset-bar &,
+    html:not([data-skin='skin-light']) .sidebar & {
+    outline: 3px dashed #fff;
+  }
+}
+
+// AIDT25QA-2559 > UDL 유형별 환경설정 대응
+body:not(.user-is-tabbing) * {
+  &:focus,
+  &:active,
+  &:focus-visible,
+  input:focus + label,
+  input:active + label,
+  input:focus-visible + label,
+  input[type='file']:focus + .btn-file,
+  input[type='file']:active + .btn-file,
+  input[type='file']:focus-visible + .btn-file,
+  .textarea-wrap.focused,
+  .btn .dot {
+    outline: none !important;
+  }
+  .only-user-tabbing {
+    display: none !important;
+  }
+}
+
+::placeholder {
+  color: unset;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+button,
+label {
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input,
+select,
+label,
+img,
+button,
+th,
+td {
+  vertical-align: middle;
+}
+
+input[type='text']::-ms-clear {
+  display: none;
+}
+
+textarea {
+  white-space: revert;
+}
+
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img,
+fieldset {
+  border: 0;
+  max-width: 100%;
+}
+
+ol,
+ol li,
+ul,
+ul li,
+menu {
+  list-style: none;
+}
+
+i,
+em,
+address {
+  font-style: normal;
+}
+
+:disabled {
+  -webkit-text-fill-color: inherit;
+  opacity: 1;
+}
+
+:disabled + label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
