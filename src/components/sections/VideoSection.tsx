@@ -69,6 +69,7 @@ export default function VideoSection() {
           <video
             ref={videoRef}
             src='/video/main.mp4'
+            aria-label='제품 소개 영상'
             controls
             preload='metadata'
             muted
@@ -83,7 +84,7 @@ export default function VideoSection() {
               onClick={handlePlay}
               aria-label='재생'
             >
-              <img src='/assets/img/svg/icon_play.svg' alt='Play' width='42' height='42' />
+              <img src='/assets/img/svg/icon_play.svg' alt='' width='42' height='42' />
             </button>
           )}
         </div>

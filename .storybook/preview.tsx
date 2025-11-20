@@ -1,13 +1,31 @@
+import '../src/styles/reset.scss';
 import type { Preview } from '@storybook/react-webpack5';
 
-export const decorators = [
-];
+export const decorators = [];
 
 const preview: Preview = {
   parameters: {
     a11y: {
-      element: '#root',
+      element: '#storybook-root',
       manual: false,
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            enabled: true,
+          },
+          {
+            id: 'label',
+            enabled: true,
+          },
+        ],
+      },
+      options: {
+        runOnly: {
+          type: 'tag',
+          values: ['wcag2a', 'wcag2aa', 'wcag21aa'],
+        },
+      },
     },
     controls: {
       matchers: {

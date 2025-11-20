@@ -2983,6 +2983,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-a11y@npm:^9.1.6":
+  version: 9.1.16
+  resolution: "@storybook/addon-a11y@npm:9.1.16"
+  dependencies:
+    "@storybook/global": "npm:^5.0.0"
+    axe-core: "npm:^4.2.0"
+  peerDependencies:
+    storybook: ^9.1.16
+  checksum: 10/24645a9df98aa52f7e52ac0ba5a87eb5b3ac533130b490628925a657ddbaab9ac370930594f5a879b9c30a36f0d2f9b752e9643a57ac8f2f835379143afb2f06
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-designs@npm:^10.0.2":
   version: 10.0.2
   resolution: "@storybook/addon-designs@npm:10.0.2"
@@ -4709,7 +4721,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:^4.10.0":
+"axe-core@npm:^4.10.0, axe-core@npm:^4.2.0":
   version: 4.11.0
   resolution: "axe-core@npm:4.11.0"
   checksum: 10/18254ee95bc328aec9a909b22e4b22e8ff14a21363fdbd1a5227267e66bf1d2fc1425c186e9001759aab5827cf4ee9dc30f7ea57e8200cbf7a1cd555ed21a908
@@ -5664,6 +5676,7 @@ __metadata:
   resolution: "design-to-markup@workspace:."
   dependencies:
     "@chromatic-com/storybook": "npm:^4.1.1"
+    "@storybook/addon-a11y": "npm:^9.1.6"
     "@storybook/addon-designs": "npm:^10.0.2"
     "@storybook/addon-docs": "npm:^9.1.6"
     "@storybook/addon-links": "npm:^9.1.6"

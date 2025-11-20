@@ -35,6 +35,7 @@ const config: StorybookConfig = {
     '@storybook/addon-vitest',
     '@storybook/addon-docs',
     '@storybook/addon-designs',
+    '@storybook/addon-a11y',
   ],
   webpackFinal: (config) => {
     if (config.resolve?.alias) {

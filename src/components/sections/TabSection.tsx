@@ -18,7 +18,12 @@ export default function TabSection() {
       <div className={styles.tabArea}>
         <Tab tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
-      <div className={styles.tabContent}>
+      <div
+        role='tabpanel'
+        id={`tabpanel-${activeTab}`}
+        aria-labelledby={`tab-${activeTab}`}
+        className={styles.tabContent}
+      >
         <div className={styles.contentBox}>
           <p className={styles.contentText}>탭 {activeTab + 1}의 콘텐츠</p>
         </div>

@@ -121,7 +121,7 @@ export default function CardSection() {
           인터렉션, 코드 구조등을 자유롭게 구현하세요.
         </p>
       </div>
-      <div className={styles.carouselArea} ref={carouselRef}>
+      <div className={styles.carouselArea} role='region' aria-label='제품 카드 캐러셀' ref={carouselRef}>
         <div className={styles.cardsTrack}>
           {cards.map((card, index) => (
             <Card key={index} title={card.title} description={card.description} />
@@ -135,6 +135,7 @@ export default function CardSection() {
             className={`${styles.dot} ${index === activeSlide ? styles.active : ''}`}
             onClick={() => handleDotClick(index)}
             aria-label={`슬라이드 ${index + 1}로 이동`}
+            aria-current={index === activeSlide ? 'true' : 'false'}
             type='button'
           >
             <span className={styles.dotInner}></span>

@@ -1,12 +1,41 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '../common/Button';
 import styles from './GNB.module.scss';
 
 export default function GNB() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const menuItems = ['Service menu 1', 'Service menu 2', 'Service menu 3', 'Service menu 4'];
+
+  // 포커스 트랩 구현
+  useEffect(() => {
+    if (isMenuOpen && menuRef.current) {
+      const focusableElements = menuRef.current.querySelectorAll<HTMLElement>(
+        'a, button, [tabindex]:not([tabindex="-1"])',
+      );
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      firstElement?.focus();
+
+      const trapFocus = (e: KeyboardEvent) => {
+        if (e.key === 'Tab') {
+          if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement?.focus();
+          } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement?.focus();
+          }
+        }
+      };
+
+      document.addEventListener('keydown', trapFocus);
+      return () => document.removeEventListener('keydown', trapFocus);
+    }
+  }, [isMenuOpen]);
 
   return (
     <header className={styles.gnb}>
@@ -30,7 +59,12 @@ export default function GNB() {
             </ul>
           </div>
           <div className={styles.actions}>
-            <button type='button' className={styles.languageButton} aria-label='언어 선택'>
+            <button
+              type='button'
+              className={styles.languageButton}
+              aria-label='언어 선택, 현재: 한국어'
+              aria-haspopup='menu'
+            >
               <span className={styles.langText}>한국어</span>
               <span className={styles.arrow} aria-hidden='true'>
                 ▼
@@ -55,8 +89,14 @@ export default function GNB() {
             type='button'
             className={styles.menuIcon}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label='메뉴 열기'
+            onKeyDown={(e) => {
+              if (e.key === 'Escape' && isMenuOpen) {
+                setIsMenuOpen(false);
+              }
+            }}
+            aria-label={isMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
             aria-expanded={isMenuOpen}
+            aria-controls='mobile-menu'
           >
             <span className={styles.bar}></span>
             <span className={styles.bar}></span>
@@ -66,7 +106,7 @@ export default function GNB() {
 
         {/* Dropdown Menu */}
         {isMenuOpen && (
-          <div className={styles.dropdown}>
+          <div id='mobile-menu' ref={menuRef} className={styles.dropdown}>
             <nav className={styles.menuItems} aria-label='모바일 메뉴'>
               <ul>
                 <li className={styles.listItem}>

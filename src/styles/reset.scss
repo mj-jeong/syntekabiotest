@@ -112,7 +112,6 @@ wbr,
 hr {
   margin: 0;
   padding: 0;
-  //border: 0; 테마 스타일이 보이지 않아서 주석 처리
   font-weight: 400;
   vertical-align: baseline;
 }
@@ -152,7 +151,7 @@ body {
   font-weight: normal;
   font-size: 0.625rem;
   line-height: 1.2;
-  overflow-y: hidden; // 저작도구 특수
+  overflow-y: hidden;
 }
 
 body {
@@ -175,14 +174,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-//다국어 관련
 body {
   top: 0 !important;
   > .skiptranslate {
     display: none !important;
   }
 }
-// 번역 툴바 숨기기
 .skiptranslate,
 #goog-gt-tt,
 #translate_element {
@@ -218,7 +215,6 @@ input[type='file']:focus + .btn-file,
 input[type='file']:active + .btn-file,
 html[data-skin='skin-light'] .textarea-wrap.focused,
 li[tabindex='0']:focus-visible {
-  /* outline: 0 사용여부는 추후에.. */
   outline: 3px dashed #000;
 
   @at-root .header & {
@@ -230,7 +226,6 @@ li[tabindex='0']:focus-visible {
   }
 }
 
-// AIDT25QA-2559 > UDL 유형별 환경설정 대응
 body:not(.user-is-tabbing) * {
   &:focus,
   &:active,

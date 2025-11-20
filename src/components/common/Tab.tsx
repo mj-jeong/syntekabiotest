@@ -9,10 +9,15 @@ interface TabProps {
 export default function Tab({ tabs, activeTab, onTabChange }: TabProps) {
   return (
     <div className={styles.tabContainer}>
-      <div className={styles.tabList}>
+      <div className={styles.tabList} role='tablist'>
         {tabs.map((tab, index) => (
           <button
             key={index}
+            role='tab'
+            aria-selected={index === activeTab}
+            aria-controls={`tabpanel-${index}`}
+            id={`tab-${index}`}
+            tabIndex={index === activeTab ? 0 : -1}
             className={`${styles.tab} ${index === activeTab ? styles.active : ''}`}
             onClick={() => onTabChange(index)}
           >
